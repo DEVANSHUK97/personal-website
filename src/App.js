@@ -25,30 +25,26 @@ import "./App.css";
 // export default App;
 
 // src/App.js
-
-// src/App.js
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
 import AboutMe from "./components/AboutMe";
-import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Blog from "./components/Blog";
+import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
-import "./styles.css";
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/about" component={AboutMe} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/" exact component={AboutMe} />
-        </Routes>
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutMe />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </Router>
   );
 }
