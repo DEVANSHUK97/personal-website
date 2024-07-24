@@ -28,7 +28,7 @@ import "./App.css";
 
 // src/App.js
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
@@ -41,13 +41,13 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <Switch>
+        <Routes>
           <Route path="/about" component={AboutMe} />
           <Route path="/contact" component={Contact} />
           <Route path="/projects" component={Projects} />
           <Route path="/blog" component={Blog} />
           <Route path="/" exact component={AboutMe} />
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );
